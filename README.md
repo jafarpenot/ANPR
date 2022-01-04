@@ -29,8 +29,8 @@ conda activate ANPR
 <b>Step 4.</b> Install dependencies
 <pre>
 pip install requirements.txt
-or
 </pre>
+or
 <pre>
 python -m pip install requirements.txt
 </pre>
