@@ -1,12 +1,16 @@
 # Automatic Number Plate Recognition with standard VS squared plate classification
 <p>This set of Notebooks heavily relies on Nicholas Renotte's <a href="https://www.youtube.com/watch?v=0-4p_QgrdbE&t=2972sprovides">tutorial</a> showing how to build a Number Plate Recognition model, train it and run it on several test images. The main difference betewen my code and his are :
+  
   - Minors changes in the folders' paths (TF API was already installed on my machine)
+  
   - Added a class (suqared_licence) and finetuned the detection model to be able to differentiate between squared and standard plates.
+  
   - Tried another OCR (Keras_OCR) to compare with EasyOCR used by Nicholas.
+  
   - Ran the OCR on different region of the plate if it is recognized as a squared plate.
   
 
-<img src="https://i.imgur.com/H3tUyKM.png">
+<img src="https://ibb.co/yhshSwT">
 
 ## Steps
 <br />
