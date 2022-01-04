@@ -1,30 +1,45 @@
-# Tensorflow Object Detection Walkthrough
-<p>This set of Notebooks provides a complete set of code to be able to train and leverage your own custom object detection model using the Tensorflow Object Detection API. This accompanies the Tensorflow Object Detection course on my <a href="https://www.youtube.com/c/nicholasrenotte">YouTube channel</a>. 
+# Automatic Number Plate Recognition with standard VS squared plate classification
+<p>This set of Notebooks heavily relies on Nicholas Renotte's <a href="https://www.youtube.com/watch?v=0-4p_QgrdbE&t=2972sprovides">tutorial</a> showing how to build a Number Plate Recognition model, train it and run it on several test images. The main difference betewen my code and his are :
+  - Minors changes in the folders' paths (TF API was already installed on my machine)
+  - Added a class (suqared_licence) and finetuned the detection model to be able to differentiate between squared and standard plates.
+  - Tried another OCR (Keras_OCR) to compare with EasyOCR used by Nicholas.
+  - Ran the OCR on different region of the plate if it is recognized as a squared plate.
+  
+
 <img src="https://i.imgur.com/H3tUyKM.png">
 
 ## Steps
 <br />
-<b>Step 1.</b> Clone this repository: https://github.com/nicknochnack/TFODCourse
+<b>Step 1.</b> Clone this repository: https://github.com/jafarpenot/ANPR
 <br/><br/>
 <b>Step 2.</b> Create a new virtual environment 
 <pre>
-python -m venv tfod
+conda create ANPR
 </pre> 
 <br/>
 <b>Step 3.</b> Activate your virtual environment
 <pre>
-source tfod/bin/activate # Linux
-.\tfod\Scripts\activate # Windows 
+conda activate ANPR
 </pre>
 <br/>
-<b>Step 4.</b> Install dependencies and add virtual environment to the Python Kernel
+<b>Step 4.</b> Install dependencies
 <pre>
-python -m pip install --upgrade pip
-pip install ipykernel
-python -m ipykernel install --user --name=tfodj
+pip install requirements.txt
+or
+</pre>
+<pre>
+python -m pip install requirements.txt
 </pre>
 <br/>
-<b>Step 5.</b> Collect images using the Notebook <a href="https://github.com/nicknochnack/TFODCourse/blob/main/1.%20Image%20Collection.ipynb">1. Image Collection.ipynb</a> - ensure you change the kernel to the virtual environment as shown below
+<b>Step 5.</b> Open Jupyter Notebook
+<pre>
+jupyter notebook
+</pre>
+You can also open and run in colab. In this case, you might want to install the dependencies (requirements.txt) in colab.
+
+In the curent version of the Notebook, the model is pretrained and loaded as it is (checkpoint-11) for detection. You can skip the training process and simply use the pretrained model, or you can train it from scratch with the provided dataset (locatel in Tensorflow/. 
+
+Collect images using the Notebook <a href="https://github.com/nicknochnack/TFODCourse/blob/main/1.%20Image%20Collection.ipynb">1. Image Collection.ipynb</a> - ensure you change the kernel to the virtual environment as shown below
 <img src="https://i.imgur.com/8yac6Xl.png"> 
 <br/>
 <b>Step 6.</b> Manually divide collected images into two folders train and test. So now all folders and annotations should be split between the following two folders. <br/>
