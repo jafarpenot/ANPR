@@ -10,7 +10,7 @@
   - Ran the OCR on different region of the plate if it is recognized as a squared plate.
   
 
-<img src="https://ibb.co/yhshSwT">
+<img src="https://i.ibb.co/q0105tG/plates.png">
 
 ## Steps
 <br />
