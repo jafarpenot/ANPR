@@ -61,6 +61,8 @@ Select the notebook <a href="https://github.com/jafarpenot/ANPR/blob/main/Traini
 <b>Results </b> The results are shown on the image below. The model can recognize and differentiate quite accurately between squared and standard licence plates. Then the OCR run on different regions of the squared plate, effectively recognize and put into order the text in the plate.
 
 
+<img src="https://i.ibb.co/q0105tG/plates.png">
+
 NOTE that the model does not perform as good as this with any suqared plate. The reason is that I trained it only adding a few images to the training set for finetuning. The features it could learn from those few images are not enough to make it very efficient. We would need a bigger dataset to train our model on.
 
 Thank you for reading !
