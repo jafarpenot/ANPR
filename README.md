@@ -37,12 +37,12 @@ python -m pip install requirements.txt
 <br/>
 
 
-<b>Step 6.</b>
+<b>Step 5.</b>
 You can collect images using Nicholas' Notebook <a href="https://github.com/nicknochnack/TFODCourse/blob/main/1.%20Image%20Collection.ipynb">1. Image Collection.ipynb</a> - or use my dataset (included in the repo) which is actually the same with some more licence plates. 
 
 
 <br/>
-<b>Step 6.</b> If you downloaded the images with Nichola's notebook, then you should manually divide collected images into two folders train and test. So now all folders and annotations should be split between the following two folders. <br/>
+If you downloaded the images with Nichola's notebook, then you should manually divide collected images into two folders train and test. So now all folders and annotations should be split between the following two folders. <br/>
 \TFODCourse\Tensorflow\workspace\images\train<br />
 \TFODCourse\Tensorflow\workspace\images\test
 <br/><br/>
@@ -53,21 +53,15 @@ jupyter notebook
 </pre>
 You can also open and run in colab. In this case, you might need to install the dependencies (requirements.txt) in colab.
 
-Select the notebook <a href="https://github.com/jafarpenot/ANPR/blob/main/Training%20and%20Detection.ipynb">2. Training and Detection.ipynb</a>. This notebook will walk you through installing Tensorflow Object Detection (if you don't have it), training your model, making detections, and printing te results. You can skip the training process and simply use the pretrained model (saved ckpt-11) on images from the test set, or you can train it from scratch on the train set (see below).
+Select the notebook <a href="https://github.com/jafarpenot/ANPR/blob/main/Training%20and%20Detection.ipynb">2. Training and Detection.ipynb</a>. This notebook will walk you through installing Tensorflow Object Detection (if you don't have it), training your model, making detections, and printing te results. You can skip the training process and simply use the pretrained model (saved with with checkpoint file ckpt-11) on images from the test set, or you can train it from scratch on the train set (see below).
 
 
  
 <br /><br/>
-<b>Step 8.</b> During this process the Notebook will install Tensorflow Object Detection. You should ideally receive a notification indicating that the API has installed successfully at Step 8 with the last line stating OK.
-<img src="https://i.imgur.com/FSQFo16.png">
-If not, resolve installation errors by referring to the <a href="https://github.com/nicknochnack/TFODCourse/blob/main/README.md">Error Guide.md</a> in this folder.
-<br /> <br/>
-<b>Step 9.</b> Once you get to step 6. Train the model, inside of the notebook, you may choose to train the model from within the notebook. I have noticed however that training inside of a separate terminal on a Windows machine you're able to display live loss metrics. 
-<img src="https://i.imgur.com/K0wLO57.png"> 
-<br />
-<b>Step 10.</b> You can optionally evaluate your model inside of Tensorboard. Once the model has been trained and you have run the evaluation command under Step 7. Navigate to the evaluation folder for your trained model e.g. 
-<pre> cd Tensorlfow/workspace/models/my_ssd_mobnet/eval</pre> 
-and open Tensorboard with the following command
-<pre>tensorboard --logdir=. </pre>
-Tensorboard will be accessible through your browser and you will be able to see metrics including mAP - mean Average Precision, and Recall.
-<br />
+<b>Results </b> The results are shown on the image below. The model can recognize and differentiate quite accurately between squared and standard licence plates. Then the OCR run on different regions of the squared plate, effectively recognize and put into order the text in the plate.
+
+
+NOTE that the model does not perform as good as this with any suqared plate. The reason is that I trained it only adding a few images to the training set for finetuning. The features it could learn from those few images are not enough to make it very efficient. We would need a bigger dataset to train our model on.
+
+Thank you for reading !
+
